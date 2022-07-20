@@ -1,0 +1,44 @@
+.skeleton-container {
+    width: 80%;
+    margin: auto;
+}
+.legend {
+    width: 25%;
+    margin: auto;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    .box-field {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 5px;
+        margin: auto;
+        p {
+            font-size: 30px;
+            margin-left: 10px;
+        }
+        .box {
+            height: 30px;
+            width: 30px;
+            border: 1px solid;
+            
+            
+        }
+        .dodgerblue{
+            background-color: dodgerblue;
+        }
+        .blueviolet{
+            background-color: blueviolet;
+        }
+        .aqua{
+            background-color: aqua;
+        }
+        .forestgreen{
+            background-color: forestgreen;
+        }
+        .greenyellow{
+            background-color: greenyellow;
+        }
+    }
+}
