@@ -3,21 +3,83 @@
   top: 0;
 
   width: 100%;
-  height: 35px;
+  height: 3em;
+  
   background: rgb(2,0,36);
   background: linear-gradient(298deg, rgba(2,0,36,1) 0%, rgba(104,9,121,1) 0%, rgba(0,212,255,1) 100%);
-  color: darkgray;
-  .list {
-    list-style-type: none;
-    margin: 0 0 0 0;
-    height: 100%;
-    overflow: hidden;
-    .item {
-      display: inline-block;
-      float:left;
-      height: 100%;
-      padding: 5px 5% 0 5%;
+  display: inline-block;
 
+  .bucket {
+    float: left;
+    color: white;
+    font-size: 30px;
+    margin: 3px 3% 0 3%;
+  }
+  .item {
+    font-size: 1.5em;
+    color: whitesmoke;
+    float: left;
+    border: none;
+    height: 100%;
+    display: block;
+    background: transparent;
+    padding: 0 3% 0 3%;
+
+  }
+  .hotpink:hover {
+    background: #f652a0;
+  }
+  .blue:hover {
+    background: #145da0;
+  }
+  .purple:hover {
+    background: purple;
+  }
+  .cyan:hover {
+    background: #2ff3e0;
+  }
+  .darkblue:hover {
+    background: darkslateblue;
+  }
+  .mobile {
+    float:right;
+
+  }
+
+  .person {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 320px) {
+
+  .NavbarItems {
+    position: fixed;
+    top: 0;
+  
+    width: 100%;
+    height: 5em;
+    
+    background: rgb(2,0,36);
+    background: linear-gradient(298deg, rgba(2,0,36,1) 0%, rgba(104,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+  
+    .bucket {
+      float: left;
+      color: white;
+      font-size: 30px;
+      margin: 3px 3% 0 3%;
+    }
+    .item {
+      font-size: 1.5em;
+      color: whitesmoke;
+      float: left;
+      border: none;
+      height: 100%;
+      display: block;
+      background: transparent;
+      padding: 0 5% 0 5%;
+  
     }
     .hotpink:hover {
       background: #f652a0;
@@ -34,18 +96,16 @@
     .darkblue:hover {
       background: darkslateblue;
     }
-
-    .item-mobile {
-      display: inline-block;
-      padding: 5px 50px 0 50px;
-      height: 100%;
-      float: right;
+    .mobile {
+      float:right;
+  
     }
-
+  
+    .person {
+      font-size: 25px;
+    }
   }
+
 }
-a {
-  text-decoration: none;
-  color: whitesmoke;
-}
+
 

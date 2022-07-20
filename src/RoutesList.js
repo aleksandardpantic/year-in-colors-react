@@ -1,1 +1,6 @@
-export default R
+export const RoutesList = [
+    {
+        Component: "Home",
+        url: "home"
+    }
+]
