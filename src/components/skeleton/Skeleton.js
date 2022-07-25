@@ -1,452 +1,51 @@
 import React, { Component } from 'react';
 import './Skeleton.scss';
+import {YearMap} from '../../domain/yearmap';
 
 class Skeleton extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            mesecc: "",
+            dan: 0
+        }
+        this.changeColor = this.changeColor.bind(this);
+    }
+    changeColor = () => {
+        window.alert("Izabran je dan: "+ this.state.dan + ". " + this.state.mesecc)
+    }
+    
     render() {
+        const meseci = []
+        const dani = []
+        var polja = []
+        
+        for (let mesec of YearMap) {
+            
+            for (let index = 1; index <= mesec.days; index++) {
+                
+                polja.push(<td><button className = 'day' onClick={this.changeColor}></button></td>)
+                
+            }
+            meseci.push(<tr> <td className='mesec'>{mesec.name}</td>{polja}</tr>)
+            polja = []
+        }
+        for (let index = 1; index <= 31; index++) {
+            dani.push(<th>{index}</th>)
+        }
         return (
             <div className='container'>
                 <table>
-<thead>
-  <tr>
-    <th></th>
-    <th>1.</th>
-    <th>2.</th>
-    <th>3.</th>
-    <th>4.</th>
-    <th>5.</th>
-    <th>6.</th>
-    <th>7.</th>
-    <th>8.</th>
-    <th>9.</th>
-    <th>10.</th>
-    <th>11.</th>
-    <th>12.</th>
-    <th>13.</th>
-    <th>14.</th>
-    <th>15.</th>
-    <th>16.</th>
-    <th>17</th>
-    <th>18.</th>
-    <th>19.</th>
-    <th>20.</th>
-    <th>21.</th>
-    <th>22.</th>
-    <th>23.</th>
-    <th>24.</th>
-    <th>25.</th>
-    <th>26.</th>
-    <th>27.</th>
-    <th>28.</th>
-    <th>29.</th>
-    <th>30.</th>
-    <th>31.</th>
-  </tr>
-</thead>
-<tbody>
-  <tr >
-    <td className='mesec'>Januar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Februar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Mart</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>April</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Maj</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Jun</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Jul</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Avgust</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Septembar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Oktobar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td  className='mesec'>Novembar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-  <tr>
-    <td className='mesec'>Decembar</td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-    <td><button className = 'day'></button></td>
-  </tr>
-</tbody>
-</table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            {dani}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {meseci}
+                    </tbody>
+                </table>
             </div>
         );
     }

@@ -4,4 +4,7 @@ class Year {
         this.months = [1,2,3,4,5,6,7,8,9,10,11,12]
         this.Days = []
     }
+    addDay(day){
+        this.Days.push(day)
+    }
 }

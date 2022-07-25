@@ -1,11 +1,13 @@
 import React from 'react';
 import Skeleton from '../../components/skeleton/Skeleton';
+
 import './HIW.scss';
-function HIW(props) {
+function HIW() {
+    
     return (
         <div>
             <div className='skeleton-container'>
-                <Skeleton></Skeleton>
+                <Skeleton ></Skeleton>
             </div>
             <div className="legend">
                 <div className="box-field">
