@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
 
 class SupportUs extends Component {
-    constructor(props) {
-        super(props);
-
-    }
+    
 
 
 
@@ -18,6 +15,6 @@ class SupportUs extends Component {
     }
 }
 
-SupportUs.propTypes = {};
+
 
 export default SupportUs;

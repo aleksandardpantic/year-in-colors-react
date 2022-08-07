@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Skeleton.scss';
 import {YearMap} from '../../domain/yearmap';
+import Day from '../day/Day'
 
 class Skeleton extends Component {
     constructor(props){
@@ -9,11 +10,9 @@ class Skeleton extends Component {
             mesecc: "",
             dan: 0
         }
-        this.changeColor = this.changeColor.bind(this);
+        
     }
-    changeColor = () => {
-        window.alert("Izabran je dan: "+ this.state.dan + ". " + this.state.mesecc)
-    }
+    
     
     render() {
         const meseci = []
@@ -24,7 +23,7 @@ class Skeleton extends Component {
             
             for (let index = 1; index <= mesec.days; index++) {
                 
-                polja.push(<td><button className = 'day' onClick={this.changeColor}></button></td>)
+                polja.push(<td><Day data={{day: index, month: mesec, mood: ""}}></Day></td>)
                 
             }
             meseci.push(<tr> <td className='mesec'>{mesec.name}</td>{polja}</tr>)

@@ -6,27 +6,11 @@
         
         margin: auto;
         td:not(.mesec){
+            padding: 0;
             height: 40px;
             width: 40px;
             border: 1px solid;
-            button.day {
-                border: none;
-                margin: 0;
-                background-color: white;
-                height: 100%;
-                width: 100%;
-                
-                
-            }
-            button.day:hover{
-                border: none;
-                margin: 0;
-                background-color: red;
-                height: 100%;
-                width: 100%;
-                
-                
-            }
+            
             
         }
 

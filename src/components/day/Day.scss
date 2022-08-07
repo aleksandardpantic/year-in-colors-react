@@ -1,0 +1,38 @@
+.container {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    .field {
+        border: none;
+        margin: 0;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        
+        
+    }
+    .bad{
+        background-color: dodgerblue;
+    }
+    .awful{
+        background-color: blueviolet;
+    }
+    .neutral{
+        background-color: aqua;
+    }
+    .excellent{
+        background-color: forestgreen;
+    }
+    .good{
+        background-color: greenyellow;
+    }
+    .field:hover{
+        border: none;
+        margin: 0;
+        background-color: darkgray;
+        height: 100%;
+        width: 100%;
+        
+        
+    }
+}

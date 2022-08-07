@@ -6,37 +6,38 @@ function HIW() {
     
     return (
         <div>
+            <div className="uvod"><p>Oceni svoje raspoloženje svakog dans</p></div>
             <div className='skeleton-container'>
                 <Skeleton ></Skeleton>
             </div>
             <div className="legend">
                 <div className="box-field">
-                    <div className="box forestgreen">
+                    <div className="box excellent">
 
                     </div>
                     <p>&#128524;</p>
                 </div>
                 <div className="box-field">
-                    <div className="box greenyellow">
+                    <div className="box good">
                         
                     </div>
                     <p>&#128515;</p>
                 </div>
                 <div className="box-field">
-                <div className="box aqua">
+                <div className="box neutral">
                         
                     </div>
                     <p>&#128528;</p>
                 </div>
                 <div className="box-field">
-                <div className="box dodgerblue">
+                <div className="box bad">
                         
                     </div>
                     
                     <p>&#128532;</p>
                 </div>
                 <div className="box-field">
-                <div className="box blueviolet">
+                <div className="box awful">
                         
                     </div>
                     
