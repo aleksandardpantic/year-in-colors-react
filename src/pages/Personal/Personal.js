@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import Skeleton from '../../components/skeleton/Skeleton'
 
 export class Personal extends Component {
+  constructor(){
+      
+  }
   render() {
+    
     return (
         <div>
         

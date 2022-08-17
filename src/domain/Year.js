@@ -1,10 +1,20 @@
+import Day from './Day';
+
 class Year {
-    constructor(){
-        this.days = [1,2,3,4,5,6,7,8,9,10,11,12,13,15,17, 18, 19,20,21,22,23,24,25,26,27,28,29,30,31]
-        this.months = [1,2,3,4,5,6,7,8,9,10,11,12]
-        this.Days = []
+    constructor(days){
+        this.days = Array(365);
+        if (Object.seal) {
+            this.days.fill(new Day(1,1,0, ""));
+        }
+        Object.seal(this.days);
+        for (let i = 0; i < days.length; i++) {
+            let day = days[i]
+            this.days[day.getYearIndex()]=day
+            
+          }
     }
-    addDay(day){
-        this.Days.push(day)
-    }
+    
+
+    
 }
+export default Year

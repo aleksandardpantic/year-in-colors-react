@@ -14,7 +14,7 @@ class Navbar extends Component {
         }
     }
     componentDidMount(){
-        this.setState({isLoggedIn: this.auth.isLoggedIn()})
+        
     }
     
 
